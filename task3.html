@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box{
+            background-color: "blue";
+            height:500px;
+            width:300px;
+            border : 1px solid red;
+           
+        }
+        .clock{
+            background-image: linear-gradient(red, yellow);
+            height: 100px;
+            width: 100%;
+            color: blue;
+            
+           text-align: center;
+            justify-content: center;
+            margin: 0px;
+            padding: 0px; 
+            align-content: center;
+        }
+        #hours,#min,#sec,#msec{
+            background-image: linear-gradient(rgb(157, 255, 0), rgb(32, 33, 31));
+            height: 100px;
+            width: 100%;
+            color: red;
+             
+           text-align: center;
+           justify-content: center;
+           margin: 0px;
+           padding: 0px; 
+           align-content: center;
+        }
+    </style>
+</head>
+<body>
+    
+
+<center>
+    <div class="box">
+        <h1 class="clock">Digital clock</h1>
+        <h1 id="hours">HOURS : </h1>
+        <h1 id="min">Minutes : </h1>
+        <h1 id="sec">Seconds : </h1>
+        <h1 id="msec">Milli seconds :</h1>
+        
+        </div>
+</center>
+
+
+    <script>
+ 
+
+var h = document.getElementById("hours")
+var m = document.getElementById("min")
+var s = document.getElementById("sec")
+var ms = document.getElementById("msec")
+
+       
+        function clock()
+        {
+        date = new Date();
+        hour = date.getHours()
+        min = date.getMinutes()
+        sec = date.getSeconds()
+        msec = date.getMilliseconds()
+
+        h.innerHTML ="hours : " + hour
+        m.innerHTML = "minutes : " + min
+        s.innerHTML = "seconds : "+ sec
+        ms.innerHTML = "milliseconds : "+ msec
+        }
+        clock();
+        setInterval(clock,100)
+
+    </script>
+</body>
+</html>
